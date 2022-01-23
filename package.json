@@ -18,18 +18,18 @@
     "fetch-mock": "^6.4.4",
     "jest": "^23.1.0",
     "node-fetch": "^2.3.0",
-    "odata-query": "^5.4.0",
-    "react": "^16.7.0-alpha.2",
-    "react-dom": "^16.7.0-alpha.2",
-    "react-fetch-component": "^8.0.0-5",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-testing-library": "^3.1.7",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "odata-query": "github:BAndonovski/odata-query",
+    "react-fetch-component": "github:BAndonovski/react-fetch-component"
   },
   "peerDependencies": {
-    "odata-query": "^5.0.0",
-    "react": "^16.7.0-alpha.2",
-    "react-dom": "^16.7.0-alpha.2",
-    "react-fetch-component": "^8.0.0-5"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-fetch-component": "github:BAndonovski/react-fetch-component",
+    "odata-query": "github:BAndonovski/odata-query"
   },
   "scripts": {
     "test": "jest",
@@ -37,6 +37,7 @@
     "clean": "rimraf dist",
     "prebuild": "npm run clean -s",
     "build": "NODE_ENV=production babel src -d dist --ignore test.js",
-    "preversion": "npm run build"
+    "preversion": "npm run build",
+    "prepare": "npm run build"
   }
 }
