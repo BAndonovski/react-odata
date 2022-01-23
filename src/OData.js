@@ -5,7 +5,7 @@ import buildQuery from 'odata-query';
 import { isFunction } from './utils';
 
 function buildUrl(baseUrl, query) {
-  return query !== false && baseUrl + buildQuery(query);
+  return query !== false && baseUrl + buildQuery(query).replace(/(?!^)?/g, '&');
 }
 
 function useOData({ baseUrl, defaultQuery, query, ...props }) {
